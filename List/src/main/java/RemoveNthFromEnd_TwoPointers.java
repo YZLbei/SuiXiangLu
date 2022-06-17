@@ -26,13 +26,8 @@ public class RemoveNthFromEnd_TwoPointers {
             p1 = p1.next;
             p2 = p2.next;
         }
-        if(p2.next.next==null){
-            p2.next = null;
-        }
-        else {
-            p2.next = p2.next.next;
-        }
-        
+
+        p2.next = p2.next.next;
         return head;
     }
 }
