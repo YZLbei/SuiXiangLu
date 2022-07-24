@@ -13,6 +13,7 @@ public class FindDuplicateSubtrees {
     List<TreeNode> res = new ArrayList<>();
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         serialize(root);
+        System.out.println(map.size());
         return res;
     }
     public String serialize(TreeNode root){
