@@ -1,4 +1,4 @@
-package complete;
+package subsequence.noncontinuous;
 
 import java.util.ArrayList;
 import java.util.Arrays;
