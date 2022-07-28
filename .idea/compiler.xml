@@ -11,6 +11,7 @@
         <module name="array" />
         <module name="graph" />
         <module name="binary" />
+        <module name="everyday" />
       </profile>
     </annotationProcessing>
   </component>
