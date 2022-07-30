@@ -1,3 +1,5 @@
+package subsequence.noncontinuous;
+
 /**
  * @Auther: YuZhenLong
  * @Date: 2022/7/30 10:09
