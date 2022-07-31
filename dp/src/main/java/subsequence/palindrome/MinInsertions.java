@@ -13,10 +13,6 @@ public class MinInsertions {
         }
         //dp[i][j]表示[i,j]让字符串成为回文串的最少插入次数
         int [][]dp =new int [n][n];
-        //初始化
-//        for (int i = 0; i <n; i++) {
-//            dp[n][i] = i;
-//        }
         for (int i = n-1; i >=0; i--) {
             //注意这里一定是i+1
             for (int j = i+1; j < n; j++) {
