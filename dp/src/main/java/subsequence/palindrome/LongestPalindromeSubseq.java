@@ -1,9 +1,9 @@
-package subsequence.continuous;
+package subsequence.palindrome;
 
 /**
  * @Auther: YuZhenLong
  * @Date: 2022/7/30 11:13
- * @Description:
+ * @Description:最长回文子序列
  */
 public class LongestPalindromeSubseq {
     public int longestPalindromeSubseq(String s) {
