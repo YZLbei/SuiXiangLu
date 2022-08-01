@@ -21,14 +21,14 @@ public class CanPartition2 {
         int res = sum/2;
         //dp[j]表示重量为res最多能填入的重量
         int[]dp = new int[res+1];
-        if (nums[0]<=res){
-            for (int i = nums[0]; i <=res; i++) {
-                dp[i] = nums[0];
-            }
-        }
-        for (int i = 1; i <n; i++) {
+//        if (nums[0]<=res){
+//            for (int i = nums[0]; i <=res; i++) {
+//                dp[i] = nums[0];
+//            }
+//        }
+        for (int i = 0; i <n; i++) {
             for (int j = res; j >=1; j--) {
-                if (nums[i]<j){
+                if (nums[i]<=j){
                     dp[j] = Integer.max(dp[j],nums[i]+dp[j-nums[i]]);
                 }
             }
