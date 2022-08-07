@@ -10,6 +10,8 @@ import java.io.File;
 public class FindRotateSteps {
     //0表示向左
     //1表示向右
+    
+    
     int [][]dp;
     int []left = new int[2];
     int []right = new int[2];
