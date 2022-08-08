@@ -1,6 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @Auther: YuZhenLong
@@ -28,9 +26,12 @@ public class FindCheapestPrice {
             distance[from].add(dis);
         }
     }
-    int []memo ;
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         buildGraph(n, flights);
+        int [][]memo = new int[n][2];
+        for (int i = 0; i < n; i++) {
+            Arrays.fill(memo[i],-1);
+        }
         //int []dp = new int[n];
         Queue<Integer>q = new LinkedList<Integer>();
         //跟q相对应，记录每个路径的值
@@ -44,10 +45,10 @@ public class FindCheapestPrice {
                 Integer cur = q.poll();
                 int lastDis;
                 if (minDis.isEmpty()){
-                     lastDis = 0;
+                    lastDis = 0;
                 }
                 else {
-                     lastDis = minDis.poll();
+                    lastDis = minDis.poll();
                 }
                 for (int j = 0; j < graph[cur].size(); j++) {
                     Integer to = graph[cur].get(j);
@@ -58,8 +59,11 @@ public class FindCheapestPrice {
                         result = Integer.min(result,curDis);
                     }
                     else {
+                        if(curDis>result){
+                            continue;
+                        }
                         q.add(to);
-                        minDis.add(lastDis + dis);
+                        minDis.add(curDis);
                     }
                 }
             }
