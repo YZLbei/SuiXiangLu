@@ -1,4 +1,4 @@
-package hard;
+package classic;
 
 import java.util.*;
 

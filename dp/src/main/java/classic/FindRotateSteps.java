@@ -1,6 +1,4 @@
-package hard;
-
-import java.io.File;
+package classic;
 
 /**
  * @Auther: YuZhenLong

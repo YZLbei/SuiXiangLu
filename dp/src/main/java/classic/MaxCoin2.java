@@ -1,7 +1,4 @@
-package hard;
-
-import java.util.HashMap;
-import java.util.LinkedList;
+package classic;
 
 /**
  * @Auther: YuZhenLong
