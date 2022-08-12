@@ -26,8 +26,7 @@ public class PredictTheWinner {
         }
         for (int i = n-3; i >=0; i--) {
             for (int j = i+2; j <n; j++) {
-                int temp = sum[i][j] - Integer.min(Integer.max(dp[i + 1][j], dp[i + 1][j]),
-                        Integer.max(dp[i][j - 1], dp[i][j - 1]));
+                int temp = sum[i][j] - Integer.min(dp[i + 1][j],dp[i][j - 1]);
 //                int temp = Integer.max(sum[i][j]-Integer.max(dp[i + 1][j], dp[i + 1][j]),
 //                        sum[i][j]-Integer.max(dp[i][j - 1], dp[i][j - 1]));
                 dp[i][j] = Integer.max(dp[i][j],temp);
