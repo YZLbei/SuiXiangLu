@@ -5,7 +5,7 @@ package stock;
  * @Date: 2022/8/15 09:30
  * @Description:
  */
-public class MaxProfit {
+public class Stock {
     public int maxProfit(int[] prices) {
         int n = prices.length;
         int min = prices[0];
