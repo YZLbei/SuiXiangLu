@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="array" />
+        <module name="binary" />
+        <module name="greedy" />
         <module name="List" />
         <module name="dp" />
-        <module name="array" />
         <module name="graph" />
-        <module name="binary" />
         <module name="everyday" />
       </profile>
     </annotationProcessing>
