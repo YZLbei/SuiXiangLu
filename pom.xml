@@ -15,6 +15,7 @@
         <module>dp</module>
         <module>everyday</module>
         <module>greddy</module>
+        <module>greedy</module>
     </modules>
 
     <properties>
