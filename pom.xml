@@ -16,6 +16,8 @@
         <module>everyday</module>
         <module>greddy</module>
         <module>greedy</module>
+        <module>greddy</module>
+        <module>greedy</module>
     </modules>
 
     <properties>

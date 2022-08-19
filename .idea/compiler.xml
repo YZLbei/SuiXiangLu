@@ -15,5 +15,9 @@
         <module name="everyday" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="greddy" target="8" />
+      <module name="greedy" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

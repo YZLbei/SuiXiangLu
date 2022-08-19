@@ -1,4 +1,5 @@
-import java.lang.reflect.AnnotatedArrayType;
+package interval;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
