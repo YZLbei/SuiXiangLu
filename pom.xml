@@ -18,6 +18,7 @@
         <module>greedy</module>
         <module>greddy</module>
         <module>greedy</module>
+        <module>backtrack</module>
     </modules>
 
     <properties>

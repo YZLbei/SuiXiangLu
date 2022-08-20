@@ -13,11 +13,11 @@
         <module name="dp" />
         <module name="graph" />
         <module name="everyday" />
+        <module name="backtrack" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="greddy" target="8" />
-      <module name="greedy" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
