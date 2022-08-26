@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @Auther: YuZhenLong
@@ -23,51 +21,44 @@ public class CanPartitionKSubsets {
             key = sum/k;
         }
         used = new boolean[n];
-        remian = n;
+        int  remain = n;
         for (int i = 0; i < n; i++) {
             if (nums[i]>key){
                 return false;
             }
         }
         System.out.println(key);
-        return backtrack(nums,key,k,0);
+        return backtrack(nums,key,k,0,0,remain);
     }
-    int sum = 0;
-    //记录当前划分出子集的个数
-    //还没划分集合的个数
-    int remian;
+
     //true表示用过，false表示没用过
     boolean[]used;
-    public boolean backtrack(int []nums,int key,int k,int num){
-        System.out.println(sum);
-        //num也要回溯
-        if (num==k&&remian==0){
+    public boolean backtrack(int []nums,int key,int k,int num,int sum,int remain){
+        //找到能划分出的结果
+        if(remain==0&&num==k){
             return true;
         }
-        //return false;
         int n = nums.length;
         for (int i = 0; i < n; i++) {
-            if (!used[i]) {
-                int nextNum = num;
-                if (sum+nums[i]>key){
-                    continue;
-                }
-                else if (sum+nums[i]==key){
-                    nextNum++;
-                    sum = 0;
-                }
-                else {
-                    sum += nums[i];
-                }                           
-                used[i] = true;
-                remian--;
-                boolean temp = backtrack(nums, key, k,nextNum);
-                if (temp){
-                    return true;
-                }
-                sum-=nums[i];
+            if (used[i]){
+                continue;
+            }
+            boolean res;
+            if (sum+nums[i]>key){
+                continue;
+            }
+            else if (sum+nums[i]==key){
+                used[i] =true;
+                res = backtrack(nums, key, k, num+1, 0,remain-1);
                 used[i] = false;
-                remian++;
+            }
+            else {
+                used[i] = true;
+                res = backtrack(nums, key, k, num, sum+nums[i],remain-1);
+                used[i] = false;
+            }
+            if (res){
+                return true;
             }
         }
         return false;
