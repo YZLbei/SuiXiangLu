@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * @Auther: YuZhenLong
@@ -7,8 +9,6 @@
 public class CanPartitionKSubsets {
     public boolean canPartitionKSubsets(int[] nums, int k) {
         int sum = 0 ;
-        
-       int a= 0;
         int n = nums.length;
         for (int i = 0; i < n; i++) {
             sum+= nums[i];
@@ -21,22 +21,32 @@ public class CanPartitionKSubsets {
             key = sum/k;
         }
         used = new boolean[n];
-        int  remain = n;
         for (int i = 0; i < n; i++) {
             if (nums[i]>key){
                 return false;
             }
         }
         System.out.println(key);
-        return backtrack(nums,key,k,0,0,remain);
+        return backtrack(nums,key,k,0,0);
     }
 
     //true表示用过，false表示没用过
     boolean[]used;
-    public boolean backtrack(int []nums,int key,int k,int num,int sum,int remain){
+    HashMap<String,Boolean>memo = new HashMap<>();
+    public boolean backtrack(int []nums,int key,int k,int num,int sum){
         //找到能划分出的结果
-        if(remain==0&&num==k){
+        if(num==k){
             return true;
+        }
+        String state = Arrays.toString(used);
+        //当前桶满了
+        if (sum==key){
+            boolean res = backtrack(nums, key, k, num + 1, 0);
+            memo.put(state,res);
+            return res;
+        }
+        if (memo.containsKey(state)){
+            return memo.get(state);
         }
         int n = nums.length;
         for (int i = 0; i < n; i++) {
@@ -47,14 +57,13 @@ public class CanPartitionKSubsets {
             if (sum+nums[i]>key){
                 continue;
             }
-            else if (sum+nums[i]==key){
-                used[i] =true;
-                res = backtrack(nums, key, k, num+1, 0,remain-1);
-                used[i] = false;
-            }
             else {
-                used[i] = true;
-                res = backtrack(nums, key, k, num, sum+nums[i],remain-1);
+                used[i] =true;
+                if (sum + nums[i] == key) {
+                    res = backtrack(nums, key, k, num, sum + nums[i]);
+                } else {
+                    res = backtrack(nums, key, k, num, sum + nums[i]);
+                }
                 used[i] = false;
             }
             if (res){
