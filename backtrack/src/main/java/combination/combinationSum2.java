@@ -17,7 +17,6 @@ public class combinationSum2 {
         used = new boolean[n];
         //排序后去重
         Arrays.sort(candidates);
-        backtrack();
     }
     List<List<Integer>> res = new LinkedList<>();
     LinkedList<Integer>path = new LinkedList<>();
