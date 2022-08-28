@@ -17,25 +17,33 @@ public class combinationSum2 {
         used = new boolean[n];
         //排序后去重
         Arrays.sort(candidates);
+        backtrack(candidates,target,0);
+        return  res;
     }
     List<List<Integer>> res = new LinkedList<>();
     LinkedList<Integer>path = new LinkedList<>();
     boolean[]used;
     int sum = 0;
-    public void backtrack(int k, int n,int startIndex){
-        if (path.size()==k&&sum==n){
+    public void backtrack(int[] candidates, int target,int startIndex){
+        if (sum==target){
             res.add(new LinkedList<>(path));
             return;
         }
-        for (int i = startIndex; i <=9; i++) {
-            if (sum+i>n){
+        int n = candidates.length;
+        for (int i = startIndex; i < n; i++) {
+            if (sum+candidates[i]>target){
                 continue;
             }
-            sum+=i;
-            path.add(i);
-            backtrack(k,n,i+1);
-            sum-=i;
+            if (i>0&&candidates[i]==candidates[i-1]&& !used[i - 1]){
+                continue;
+            }
+            sum+=candidates[i];
+            path.add(candidates[i]);
+            used[i] = true;
+            backtrack(candidates,target,i+1);
+            sum-=candidates[i];
             path.removeLast();
+            used[i] = false;
         }
     }
 }
