@@ -42,4 +42,23 @@ public class NumDistinctIslands {
         sb.append(4);
         dfs(grid,i,j+1);
     }
+
+    void dfs(int[][] grid, int i, int j, StringBuilder sb, int dir) {
+        int m = grid.length, n = grid[0].length;
+        if (i < 0 || j < 0 || i >= m || j >= n
+                || grid[i][j] == 0) {
+            return;
+        }
+        // 前序遍历位置：进入 (i, j)
+        grid[i][j] = 0;
+        sb.append(dir).append(',');
+
+        dfs(grid, i - 1, j, sb, 1); // 上
+        dfs(grid, i + 1, j, sb, 2); // 下
+        dfs(grid, i, j - 1, sb, 3); // 左
+        dfs(grid, i, j + 1, sb, 4); // 右
+
+        // 后序遍历位置：离开 (i, j)
+        sb.append(-dir).append(',');
+    }
 }
