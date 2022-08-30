@@ -1,5 +1,3 @@
-package island;
-
 import java.util.Scanner;
 
 /**
@@ -7,7 +5,7 @@ import java.util.Scanner;
  * @Date: 2022/8/30 20:31
  * @Description:
  */
-public class Main2 {
+public class rongyao2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String s1 = in.nextLine();

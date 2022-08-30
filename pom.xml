@@ -19,6 +19,7 @@
         <module>greddy</module>
         <module>greedy</module>
         <module>backtrack</module>
+        <module>exam</module>
     </modules>
 
     <properties>
