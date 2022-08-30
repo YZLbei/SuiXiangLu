@@ -43,4 +43,27 @@ public class CountSubIslands {
         dfs(grid,i,j-1);
         dfs(grid,i,j+1);
     }
+
+//    double [][]dp = new double[5][5];
+//        for (int i = 1; i < 5; i++) {
+//        for (int j = 0; j < 5; j++) {
+//            dp[i][j]  =Integer.MAX_VALUE;
+//        }
+//    }
+//        for (int i = 0; i < 5; i++) {
+//        dp[0][i] = Math.pow(grass[i][0]*grass[i][0]+grass[i][1]*grass[i][1],0.5);
+//    }
+//        for (int i = 1; i < 5; i++) {
+//        for (int j = 0; j < 5; j++) {
+//            if (i!=j){
+//                dp[i][j]= Double.min(dp[i][j],dp[i-1][j]+
+//                        Math.pow(Math.pow((grass[i][0]-grass[j][0]),2)+
+//                                Math.pow((grass[i][1]-grass[j][0]),2),0.5));
+//            }
+//        }
+//    }
+//    double res = Integer.MAX_VALUE;
+//        for (int i = 0; i < 5; i++) {
+//        res  = Double.min(res,dp[4][i]);
+//    }
 }
