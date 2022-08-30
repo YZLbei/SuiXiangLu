@@ -12,8 +12,6 @@ public class rongyao1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         double [][] grass = new double[5][2];
-        
-        
         for (int i = 0; i < grass.length; i++) {
             grass[i][0] = in.nextDouble();
             grass[i][1] = in.nextDouble();
