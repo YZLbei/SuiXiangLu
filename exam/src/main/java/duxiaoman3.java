@@ -14,6 +14,7 @@ public class duxiaoman3 {
 //        dp[1] = 0;
 //        dp[2] = ;
 //        dp[3] = 25;
+        
         dp[0] = 1;
         dp[1] = 9;
         dp[2] = 80;
