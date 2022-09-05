@@ -13,8 +13,6 @@ public class didi1 {
         int T = in.nextInt();
         int []l = new int[T];
         int []r = new int[T];
-        
-        
         int []t = new int[T];
         for (int i = 0; i < T; i++) {
             l[i] = in.nextInt();
