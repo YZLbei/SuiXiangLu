@@ -17,7 +17,6 @@ public class manbang2 {
         Arrays.sort(score);
         dp = new int[n];
         Arrays.fill(dp,-1);
-        //used = new boolean[n];
         System.out.println(dp(0, n, score));
     }
     static int []dp;
