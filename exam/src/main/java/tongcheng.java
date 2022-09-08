@@ -14,7 +14,6 @@ public class tongcheng {
         while (left<=s.length()-2){
             a.append(s.charAt(left));
             
-            
             b.insert(0,s.charAt(right));
             if (a.toString().equals(b.toString())){
                 res = new StringBuilder(a);
