@@ -9,6 +9,7 @@ import java.util.Stack;
 public class yongyou3 {
     public int[] findBuilding (int[] heights) {
         Stack<Integer>stack1  = new Stack<>();
+        
         Stack<Integer>stack2 = new Stack<>();
         ArrayList<Integer> count1 = new ArrayList<>();
         ArrayList<Integer> count2 = new ArrayList<>();
