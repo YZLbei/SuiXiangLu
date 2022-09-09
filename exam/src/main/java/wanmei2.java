@@ -43,7 +43,7 @@ public class wanmei2 {
             }
             else {
                 if (o1.num>10){
-                    return 0;
+                    return 1;
                 }
                 else {
                     return -1;
@@ -120,5 +120,4 @@ public class wanmei2 {
         Collections.sort(res,new MyComparator());
         return  res;
     }
-    
 }
