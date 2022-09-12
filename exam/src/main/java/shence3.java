@@ -21,6 +21,7 @@ public class shence3 {
             max = Integer.max(max,road[i][1]);
         }
         int a = in.nextInt();
+        
         int b = in.nextInt();
         graph = new List[max+1];
         for (int i = 0; i <=max; i++) {
