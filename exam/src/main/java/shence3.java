@@ -21,7 +21,6 @@ public class shence3 {
             max = Integer.max(max,road[i][1]);
         }
         int a = in.nextInt();
-        
         int b = in.nextInt();
         graph = new List[max+1];
         for (int i = 0; i <=max; i++) {
@@ -32,15 +31,20 @@ public class shence3 {
             int to = road[i][1];
             graph[from].add(to);
         }
-
         StringBuilder roadCur = new StringBuilder();
+        roadCur.append(a);
         dfs(a,roadCur,false);
         roadCur = new StringBuilder();
+        roadCur.append(b);
         dfs(b,roadCur,true);
+        for (int i = 0; i < roadA.size(); i++) {
+            System.out.println(roadA.get(i));
+        }
+        for (int i = 0; i < roadB.size(); i++) {
+            System.out.println(roadB.get(i));
+        }
         int min = Integer.MAX_VALUE;
         int res = 0;
-//        System.out.println(roadA.get(0));
-//        System.out.println(roadB.get(0));
         for (int i = 0; i < roadA.size(); i++) {
             for (int j = 0; j < roadB.size(); j++) {
                 for (int k = 0; k < roadA.get(i).length(); k++) {
@@ -59,7 +63,6 @@ public class shence3 {
    static LinkedList<String> roadA = new LinkedList<>();
    static LinkedList<String> roadB = new LinkedList<>();
     static public void  dfs(int from,StringBuilder road,boolean flag){
-        road.append(from);
         if (graph[from].contains(1)){
             road.append("1");
             if (!flag) {
@@ -68,11 +71,13 @@ public class shence3 {
             else {
                 roadB.add(new String(road));
             }
-            return;
+            return ;
         }
         for (int i = 0; i < graph[from].size(); i++) {
-            dfs(graph[from].get(i),road,flag);
+            StringBuilder temp = new StringBuilder(road);
+            temp.append(graph[from].get(i));
+            dfs(graph[from].get(i), temp, flag);
         }
-        road.delete(road.length()-1,road.length()-1);
+        
     }
 }
