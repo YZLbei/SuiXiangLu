@@ -11,6 +11,7 @@ public class jingdong3 {
         int n = in.nextInt();
         int k = in.nextInt();
         int []num = new int[n];
+        
         for (int i = 0; i < n; i++) {
             num[i] = in.nextInt();
         }
