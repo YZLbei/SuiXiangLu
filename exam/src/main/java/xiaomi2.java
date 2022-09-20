@@ -33,6 +33,7 @@ public class xiaomi2 {
                     return o1[0]-o2[0];
                 }
             }
+            
         });
         int res = 0;
         int edge = 0;
