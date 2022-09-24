@@ -15,6 +15,7 @@
         <module name="graph" />
         <module name="everyday" />
         <module name="backtrack" />
+        <module name="wind" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
