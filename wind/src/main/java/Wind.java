@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * @Auther: YuZhenLong
  * @Date: 2022/9/24 11:32
@@ -105,11 +107,40 @@ public class Wind {
        backtrack(needs,prices,specials,0,curCost);
     }
 
+    /**
+     * prices  99 24 68
+     * specials 1 1 0 110   0 2 1 100
+     * needs 3 2 1
+     */
     public static void main(String[] args) {
-        int []prices = new int[]{99,24,68};
-        int [][]specials = new int[][]{{1,1,0,110},{0,2,1,100}};
-        int []needs = new int[]{3,2,1};
+        System.out.println("输入商品个数n:");
+        System.out.println("默认为: 3");
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int []prices = new int[n];
+        System.out.println("依次输入商品单价:");
+        System.out.println("默认为: 99 24 68");
+        for (int i = 0; i < n; i++) {
+            prices[i] = in.nextInt();
+        }
+        System.out.println("输入优惠礼包个数m:");
+        System.out.println("默认为: 2");
+        int m = in.nextInt();
+        System.out.println("依次输入每个优惠礼包:");
+        System.out.println("默认为: 1 1 0 110    0 2 1 100");
+        int [][]specials = new int[m][n+1];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j <=n; j++) {
+                specials[i][j] = in.nextInt();
+            }
+        }
+        int []needs = new int[n];
+        System.out.println("依次输入需要购买的商品:");
+        System.out.println("默认为: 3 2 1");
+        for (int i = 0; i < n; i++) {
+            needs[i] = in.nextInt();
+        }
         int res = minCost(prices, specials, needs);
-        System.out.println("最少花费为："+res);
+        System.out.println("最少花费为:"+res);
     }
 }

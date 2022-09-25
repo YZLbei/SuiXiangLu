@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="wind:jar">
+    <output-path>$PROJECT_DIR$/wind/bin</output-path>
+    <root id="archive" name="wind.jar">
+      <element id="module-output" name="wind" />
+    </root>
+  </artifact>
+</component>
