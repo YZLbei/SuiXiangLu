@@ -48,7 +48,6 @@ public class alli {
         int []nums2 = new int[]{2,5,6};
         int m = 3;
         int n = 3;
-        
         //merge(nums1,nums2,3,3);
         for (int i = m; i < m + n; i++) {
             nums1[i] =nums2[i-m];
