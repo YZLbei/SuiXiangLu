@@ -13,13 +13,13 @@
         <module name="List" />
         <module name="dp" />
         <module name="graph" />
-        <module name="everyday" />
         <module name="backtrack" />
-        <module name="wind" />
+        <module name="everyday" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="greddy" target="8" />
+      <module name="wind" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
